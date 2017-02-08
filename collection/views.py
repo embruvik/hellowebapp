@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from collection.models import Thing
 
 # Create your views here.
 def index(request):
-    number = 6
-    retobj = render(request, 'index.html', {'number': number})
+    things = Thing.objects.all()
+    retobj = render(request, 'index.html', {'things': things,})
     print('Hello?')
     return retobj
 

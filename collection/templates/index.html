@@ -5,14 +5,9 @@
 
 {% block content %} 
     <h1>Hello World!</h1>
-    <p>I am a basic web page</p>
-    <p>{{ number }}</p>
-    <p><b> 
-        {% if number == 6 %}
-            True
-        {% else %}
-            False
-        {% endif %}
-    </b></b>
+    {% for thing in things %}
+        <h2>{{thing.name}}</h2>
+        <p>{{thing.description}}</p>
+    {% endfor %}
 
 {% endblock content %}
