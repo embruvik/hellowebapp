@@ -12,3 +12,9 @@ def index(request):
 def index2(request):
     #return render
     return HttpResponse('Hello ' + request.path, 'text', 200)
+
+def thing_detail(request, slug):
+    thing = Thing.objects.get(slug=slug)
+
+    return render(request, 'things/thing_detail.html', {'thing': thing,})
+    
