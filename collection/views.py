@@ -3,10 +3,11 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    ro = render(request, 'index.html')
+    number = 6
+    retobj = render(request, 'index.html', {'number': number})
     print('Hello?')
-    return ro
+    return retobj
 
 def index2(request):
     #return render
-    return HttpResponse('Hello ' + request.path,'text',200)
+    return HttpResponse('Hello ' + request.path, 'text', 200)
