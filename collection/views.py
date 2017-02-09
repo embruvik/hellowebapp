@@ -39,3 +39,11 @@ def edit_thing(request, slug):
     retobj = render(request,'things/edit_thing.html', {'thing': thing, 'form': form,})
     return retobj
 
+def browse_by_name(request,initial=None):
+    if initial:
+        things = Thing.objects.filter(name__istartswith=initial)
+        things = things.order_by('name')
+    else:
+        things = Thing.objects.all().order_by('name')
+    
+    return render(request,'search/search.html',{'things':things,'initial':initial})

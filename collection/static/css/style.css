@@ -5,3 +5,8 @@ body {
 h1 {
     background-image: url(../images/logo.jpg);
 }
+
+.active {
+    border: 1px;
+    background-color: red;
+}
