@@ -122,6 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+#STATIC_ROOT = './STATIC_COLLECTED' #hm, see where this goes - ends up under project root where manage.py is
 ACCOUNT_ACTIVATION_DAYS = 7
 LOGIN_REDIRECT_URL = "home"
 
